@@ -8,8 +8,8 @@ Group members:
 --Romano, Enzo
 --Woollet, Ethan
 
-##Current domain:
+## Current domain:
 http://group23.xyz
 
-##Project Details
+## Project Details
 It is a contact manager for individual users. Each user has a list of contacts that they can add, remove, and edit with related information.
