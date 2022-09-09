@@ -1,12 +1,6 @@
 # Contact Manager (Goated Group 23)
 ## This is the Small Project for our COP4331 class
-Group members: 
---Bui, John
---Frelix, Ian
---Wallace, Samu 
---Mousa, Gabriel
---Romano, Enzo
---Woollet, Ethan
+Group members: John Bui, Ian Frelix, Gabriel Mousa, Enzo Romano, Samu Wallace, Ethan Woollet
 
 ## Current domain:
 http://group23.xyz
