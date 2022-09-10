@@ -6,37 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact Manager (G23)</title>
-    <link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
+<body>
 
-  <body>
+	<div class="header">
 
-    <div class="header">
-
-      <div class="tnavbar">
-          <a href="">Contact Manager</a>
-      </div>
-
-      <div class="bnavbar">
-          <a href="https://github.com/enzosromano/GoatedGroup23">Github</a>
-      </div>
-      
-    </div>
-
-    <div class="mainBody">
-
-      <div class="loginModal">
-        
-        <label for="username">User Name:</label>
-        <input type="text" id="username" name="username">
-
-        <label for="passowrd">Password:</label>
-        <input type="text" id="password" name="password">
+		<div class="tnavbar">
+			<a href="">Contact Manager</a>
+		</div>
   
-      </div>
-  
-    </div>
+		<div class="bnavbar">
+			<a href="https://github.com/enzosromano/GoatedGroup23">Github</a>
+		</div>
+		
+	  </div>
 
-    
-  </body>
+	  <div class="mainBody">
+
+		<div class="loginModal">
+		  
+			<h1>Login to Contact Manager</h1>
+			<input type="text" id="loginName" placeholder="Username" /><br />
+			<input type="password" id="loginPassword" placeholder="Password"/><br />
+			<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
+			<span id="loginResult"></span>
+	
+		</div>
+	
+	  </div>
+
+</body>
 </html>
