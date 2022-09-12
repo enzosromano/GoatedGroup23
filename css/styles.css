@@ -107,7 +107,7 @@ body {
     width: 80px;
 }
 
-.loginModel input[type = "text"],.loginModel input[type = "password"] {
+.loginModel input {
     border: 0;
     background-color: #FDB7B5;
     display: block;
@@ -119,7 +119,7 @@ body {
     width: 200px;
 }
 
-.loginModel input[type = "text"]:focus,.loginModel input[type = "password"]:focus {
+.loginModel input:focus {
     width: 280px;
 }
 
@@ -136,7 +136,8 @@ body {
     width: 200px
 }
 
-.homeModel h2 {
-    
-}
 
+.loginRegister {
+    display: flex;
+    flex-direction: column;
+}

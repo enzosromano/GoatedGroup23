@@ -5,6 +5,60 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 
+function createUser() {
+  userId = 0;
+  firstName = "";
+  lastName = "";
+
+  let fname = document.getElementById("userFirstName").value;
+  let lname = document.getElementById("userLastName").value;
+  let email = document.getElementById("email").value;
+  let pnumber = document.getElementById("phoneNumber").value;
+  let login = document.getElementById("loginName").value;
+  let password = document.getElementById("loginPassword").value;
+
+  document.getElementById("loginResult").innerHTML = "";
+
+  let tmp = {
+    firstName: fname,
+    lastName: lname,
+    email: email,
+    phoneNumber: pnumber,
+    login: login,
+    password: password,
+  };
+  let jsonPayload = JSON.stringify(tmp);
+  let url = urlBase + "/AddUser." + extension;
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  try {
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        let jsonObject = JSON.parse(xhr.responseText);
+        userId = jsonObject.id;
+
+        if (userId < 1) {
+          document.getElementById("loginResult").innerHTML =
+            "User/Password combination incorrect";
+          return;
+        }
+
+        firstName = jsonObject.firstName;
+        lastName = jsonObject.lastName;
+
+        saveCookie();
+
+        window.location.href = "color.html";
+      }
+    };
+    xhr.send(jsonPayload);
+  } catch (err) {
+    document.getElementById("loginResult").innerHTML = err.message;
+  }
+}
+
 function doLogin() {
   userId = 0;
   firstName = "";
