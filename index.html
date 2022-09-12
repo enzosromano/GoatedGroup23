@@ -11,30 +11,38 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
 <body>
-	<div class="headerBorder">
+	<div class="header">
         <h1>
             Contact Manager
         </h1>
     </div>
 
-	<div class="mainBody">
-		<form class="loginModel" action="index.html" method="post">
-			<h2>
-				Login
-			</h2>
+	<div class="loginBody">
+
+		<div class="signInModal">
+			<h1>Sign in</h1>
+
 			<input type="text" id="loginName" placeholder="Username" /><br />
 			<input type="password" id="loginPassword" placeholder="Password"/><br />
 
-			<div class="loginRegister">
-				<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
-				<span id="loginResult"></span>
-
-				<p>New User? Register Below</p>
-
-				<button type="button" class="buttons" onclick="location.href='register.html';">Register</button>
+			<div class="btn-one" onclick="doLogin();">
+				<span>Login</span>
 			</div>
-			
-		</form>
+
+			<span id="loginResult"></span>
+
+
+		</div>
+
+		<div class="signUpModal">
+			<h1>Keep in touch,</h1>
+			<h2>Start tracking your contacts with us today.</h2>
+			<div class="btn-three" onclick="location.href='register.html';">
+				<span>Register</span>
+			</div>
+
+		</div>
+
 	</div>
 
 

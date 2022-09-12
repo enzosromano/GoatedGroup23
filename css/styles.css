@@ -3,6 +3,7 @@ body {
     width: 100%;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: linear-gradient(to right, #628281, #464A5F);
 }
 
 .header {
@@ -11,38 +12,6 @@ body {
     font-size: 18px;
     align-items: center;
     /*background-color: #1F2937;*/
-    padding: 200px 13% 15px 13%;
-}
-
-.headerBorder {
-    font-size: 25px;
-    border: 4px solid black;
-    border-left: 0;
-    border-top: 0;
-    text-transform: uppercase;
-    height: 60px;
-    width: 500px;
-    color: white;
-}
-
-.tnavbar, .bnavbar {
-    display: flex;
-    /*justify-content: space-around;*/
-    gap: 10px;
-}
-
-.tnavbar a {
-    text-decoration: none;
-    font-size: 50px;
-    /*color: #F9FAF8;*/
-    color: #F64C72;
-    font-weight: bold;
-}
-
-.bnavbar a {
-    text-decoration: none;
-    font-size: 18px;
-    color: #E5E7EB;
 }
 
 @media only screen and (max-width: 850px) {
@@ -55,29 +24,57 @@ body {
   }
 
 
-
-.mainBody {
+.loginBody {
+    width: 50%;
+    height: 50vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: 200px;
-
+    justify-content: center;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.loginModal {
+
+
+.signInModal {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    border-radius: 25px;
-    border: 6px solid black;
-    height: 450px;
-    width: 20%;
+
+    background-color: white;
+
+    width: 50%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
 }
 
+.signUpModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+
+    color: white;
+    background-color: #464A5F;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.signUpModal h2 {
+    padding: 10%;
+    align-self: center;
+    text-align: center;
+}
+
+
 .loginModel {
-    background-color: brown;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,7 +95,7 @@ body {
 }
 
 .loginModel h2 {
-    color: white;
+    color: black;
     text-transform: uppercase;
     font: bold;
     border: 3px solid black;
@@ -123,21 +120,92 @@ body {
     width: 280px;
 }
 
-.homeModel {
-    background-color: brown;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 25px;
-    border: 5px solid black;
-    height: 50px;
-    width: 200px
-}
-
 
 .loginRegister {
     display: flex;
     flex-direction: column;
 }
+
+.btn-three {
+    color: white;
+    transition: all 0.5s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    height: 5%;
+  }
+  .btn-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+  }
+  .btn-three:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+  }
+  .btn-three::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: scale(1.2,1.2);
+  }
+  .btn-three:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+  }
+
+.btn-one {
+    color: black;
+    transition: all 0.5s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    height: 5%;
+  }
+  .btn-one::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(115, 129, 136, 0.24);
+    transition: all 0.3s;
+  }
+  .btn-one:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+  }
+  .btn-one::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(163, 42, 42, 0.5);
+    transform: scale(1.2,1.2);
+  }
+  .btn-one:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+  }
