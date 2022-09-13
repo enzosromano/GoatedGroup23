@@ -11,35 +11,51 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
 <body>
-	<div class="headerBorder">
+	<div class="header">
         <h1>
             Contact Manager
         </h1>
     </div>
 
-	<div class="mainBody">
-		<form class="loginModel" action="index.html" method="post">
-			<h2>
-				Register
-			</h2>
-            <input type="text" id="userFirstName" placeholder="First Name" /><br />
-			<input type="text" id="userLastName" placeholder="Last Name"/><br />
-            <input type="email" id="email" placeholder="Email" /><br />
-            <input type="tel" id="phoneNumber" placeholder="Phone #" /><br />
-			<input type="text" id="loginName" placeholder="Username" /><br />
-			<input type="password" id="loginPassword" placeholder="Password"/><br />
 
-			<div class="loginRegister">
-                <button type="button" id="registerButton" class="buttons" onclick="createUser();"> Register </button>
-                <span id="loginResult"></span>
-			</div>
 
-            <p>Already have an account?</p>
+	<form class="registerModal" action="index.html" method="post">
+		<h2>
+			Register
+		</h2>
 
-				<button type="button" class="buttons" onclick="location.href='index.html';">Login</button>
+        <input type="text" class="form-input" id="userFirstName" placeholder="First Name"/>
+        <input type="text" class="form-input" id="userLastName" placeholder="Last Name"/>
+        <input type="text" class="form-input" id="email" placeholder="Email"/>
+        <input type="text" class="form-input" id="phoneNumber" placeholder="Phone #"/>
+        <input type="text" class="form-input" id="loginName" placeholder="Username"/>
+        <input type="text" class="form-input" id="loginPassword" placeholder="Password"/>
+
+
+        <!--<input type="text" id="userFirstName" placeholder="First Name" /><br />
+		<input type="text" id="userLastName" placeholder="Last Name"/><br />
+        <input type="email" id="email" placeholder="Email" /><br />
+        <input type="tel" id="phoneNumber" placeholder="Phone #" /><br />
+		<input type="text" id="loginName" placeholder="Username" /><br />
+		<input type="password" id="loginPassword" placeholder="Password"/><br />-->
+
+		<!--<div class="loginRegister">
+            <button type="button" id="registerButton" class="buttons" onclick="createUser();"> Register </button>
+            <span id="loginResult"></span>
+		</div>-->
+
+        <div class="btn" id="registerButton" onclick="createUser();">
+            <span>Register</span>
+        </div>
+
+        <p>Already have an account?</p>
+		<!--<button type="button" class="buttons" onclick="location.href='index.html';">Login</button>-->
+        <div class="btn" id="registerButton" onclick="location.href='index.html';">
+            <span>Login</span>
+        </div>
 			
-		</form>
-	</div>
+	</form>
+
 
 
 </body>
