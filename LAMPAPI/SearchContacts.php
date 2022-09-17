@@ -5,8 +5,9 @@
 	$searchResults = "";
 	$searchCount = 0;
 
-	$firstName = $inData["firstName"];
-	$lastName = $inData["lastName"];
+	$userID = $inData["userID"];
+	$userFirstName = $inData["userFirstName"];
+	$userLastName = $inData["userLastName"];
 
 	$conn = new mysqli("localhost", "TheGuy", "Group23IsGoated", "COP4331");
 
@@ -17,8 +18,8 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("SELECT ID,FirstName,LastName,Email FROM Users WHERE FirstName=? AND LastName=?");
-		$stmt->bind_param("ss", $firstName, $lastName);
+		$stmt = $conn->prepare("SELECT ContactFirstName,ContactLastName,ContactEmail,ContactPhoneNumber FROM Contacts WHERE UserID=? AND UserFirstName=? AND UserLastName=?");
+		$stmt->bind_param("sss", $userID, $userFirstName, $userLastName);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
@@ -30,12 +31,12 @@
 			}
 
 			$searchCount++;
-			$searchResults .= '{"id":"' . $row["ID"] . '","firstName":"' . $row["FirstName"] . '","lastName":"' . $row["LastName"] . '","email":"' . $row["Email"] . '"}';
+			$searchResults .= '{"contactFirstName":"' . $row["ContactFirstName"] . '","contactLastName":"' . $row["ContactLastName"] . '","contactEmail":"' . $row["ContactEmail"] . '","contactPhoneNumber":"' . $row["ContactPhoneNumber"] . '"}';
 		}
 
 		if( $searchCount == 0 )
 		{
-			returnWithError( "No Records Found" );
+			returnWithError( "No Contacts Found" );
 		}
 		else
 		{
@@ -59,13 +60,13 @@
 
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":"0","firstName":"","lastName":"","email":"","error":"' . $err . '"}';
+		$retValue = '{"results":[],"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 
 	function returnWithInfo( $searchResults )
 	{
-		$retValue = '{"results":[' . $searchResults . ']}';
+		$retValue = '{"results":[' . $searchResults . '],"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 

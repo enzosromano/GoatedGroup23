@@ -54,7 +54,7 @@
 	}
 	function returnWithSuccess ()
 	{
-		$retValue ='{"message":"Successfully deleted User"}';
+		$retValue ='{"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	

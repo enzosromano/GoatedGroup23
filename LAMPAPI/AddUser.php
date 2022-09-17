@@ -53,14 +53,14 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"error":"' . $err . '"}';
+		$retValue = '{"firstName":"","lastName":"","email":"","phoneNumber":"","login":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
 	function returnWithSuccess ()
 	{
 		global $firstName, $lastName, $email, $phoneNumber, $login;
-		$retValue ='{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","email":"' . $email . '","phoneNumber":"' . $phoneNumber . '","login":"' . $login . '"}';
+		$retValue ='{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","email":"' . $email . '","phoneNumber":"' . $phoneNumber . '","login":"' . $login . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
