@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G23 Contacts</title>
+    <script type="text/javascript" src="js/code.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body id="contactBody" onload="readCookie();">
+
+    <div id="menubar">
+
+        <button id="logoBtn" onclick="contactTable();">
+            <img src="images/twitchpfp.png" alt="HOME" height="40px" width="40px">
+        </button>
+        <header id="title">
+            <h2>Contact Manager</h2>
+        </header>
+
+        <!-- beginning of add contact pop up form -->
+        <!-- <button id = "addContactBtn" onclick = "backgroundDim()"> -->
+        <button id="addContactBtn">
+            Add New Contact
+        </button>
+
+        <!-- end of add contact pop up form -->
+
+        <button id="deleteUserBtn">
+            Delete User
+        </button>
+
+        <div id="welcomeMsg">
+            Welcome, firstname.
+        </div>
+        <button id="signout" onclick="doLogout();">
+            Sign Out
+        </button>
+
+
+    </div>
+
+    <div id="popupUser">
+        <div class="closeBtn"> &times </div>
+        <div class="from">
+            <h2> Delete User</h2>
+            <div class="formElement">
+                <label for="username-form"> Username </label>
+                <input type="text" id="username-form" placeholder="Enter Username">
+            </div>
+            <div class="formElement">
+                <label for="password-form"> Password </label>
+                <input type="text" id="password-form" placeholder="Enter Password">
+            </div>
+            <br>
+            <div id="deleteUserResult">
+
+            </div>
+            <div class="formElement">
+                <button onclick="deleteUser();"> Submit </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup">
+        <div class="closeBtn"> &times </div>
+        <div class="form">
+            <h2> New Contact </h2>
+            <div class="formElement">
+                <label for="first-name-form"> First Name </label>
+                <input type="text" id="first-name-form" placeholder="Enter Contact First Name">
+            </div>
+            <div class="formElement">
+                <label for="last-name-form"> Last Name </label>
+                <input type="text" id="last-name-form" placeholder="Enter Contact Last Name">
+            </div>
+            <div class="formElement">
+                <label for="email-form"> Email </label>
+                <input type="text" id="email-form" placeholder="Enter Contact Email">
+            </div>
+            <div class="formElement">
+                <label for="phone-form"> Phone </label>
+                <input type="text" id="phone-form" placeholder="Enter Contact Phone">
+            </div>
+            <br>
+            <div id="addContactResult">
+
+            </div>
+            <div class="formElement">
+                <button onclick="addContact();"> Submit </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popupEdit">
+        <div class="closeBtn"> &times </div>
+        <div class="form">
+            <h2> Edit Contact </h2>
+            <div class="formElement">
+                <label for="first-edit-form"> First Name </label>
+                <input type="text" id="first-edit-form" placeholder="Edit Contact First Name">
+            </div>
+            <div class="formElement">
+                <label for="last-edit-form"> Last Name </label>
+                <input type="text" id="last-edit-form" placeholder="Edit Contact Last Name">
+            </div>
+            <div class="formElement">
+                <label for="email-edit-form"> Email </label>
+                <input type="text" id="email-edit-form" placeholder="Edit Contact Email">
+            </div>
+            <div class="formElement">
+                <label for="phone-edit-form"> Phone </label>
+                <input type="text" id="phone-edit-form" placeholder="Edit Contact Phone">
+            </div>
+            <br>
+            <div id="editContactResult">
+
+            </div>
+            <div class="formElement">
+                <button onclick="editContact();"> Submit </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti quas commodi in doloremque explicabo fugit ad
+        harum hic quos dicta error incidunt veritatis blanditiis, vero eius maiores repellat quam labore.
+    </div>
+
+    <table id="contact-table">
+        <tr>
+            <th>First</th>
+            <th>Last</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th id=editHdr>Edit</th>
+            <th id=removeHdr>Remove</th>
+        </tr>
+
+
+        <tr>
+            <td>Samu</td>
+            <td>Wallace</td>
+            <td>samu.wallace@knights.ucf.edu</td>
+            <td>(561) 386-0089</td>
+            <td class="edit"> <button class="editBtn" onclick="setRowGlobal(this.parentNode.parentNode);"> <img
+                        src="images/editicon.png" alt="edit" height="40px" width="40px"> </button> </td>
+            <td class="remove"> <button class="removeBtn" onclick="deleteContact(this.parentNode.parentNode);"> <img
+                        src="images/removeicon.png" alt="delete" height="40px" width="40px"> </button> </td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Smith</td>
+            <td>john.smith@knights.ucf.edu</td>
+            <td>(999) 999-9999</td>
+            <td class="edit"> <button class="editBtn"> <img src="images/editicon.png" alt="edit" height="40px"
+                        width="40px"> </button> </td>
+            <td class="remove"> <button class="removeBtn"> <img src="images/removeicon.png" alt="delete" height="40px"
+                        width="40px"> </button> </td>
+        </tr>
+
+
+    </table>
+
+    <br>
+
+    <div id="contactTableResult"></div>
+    <div id="deleteContactResult"></div>
+
+</body>
+
+
+</html>
