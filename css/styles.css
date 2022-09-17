@@ -1,44 +1,42 @@
-
-
 body {
-    background-color: #C33434;
-    width: 100%;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /*background-image: linear-gradient(to right, #628281, #464A5F);*/
-    background-color: #464A5F;
+  background-color: #C33434;
+  width: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /*background-image: linear-gradient(to right, #628281, #464A5F);*/
+  background-color: #464A5F;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    font-size: 18px;
-    align-items: center;
-    /*background-color: #1F2937;*/
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  align-items: center;
+  /*background-color: #1F2937;*/
 }
 
 @media only screen and (max-width: 850px) {
-    .header {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      padding: 10px 15% 30px 15%;
-    }
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 10px 15% 30px 15%;
   }
+}
 
 
 .loginBody {
-    width: 75%;
-    height: 65vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 5%;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, 
-    rgba(0, 0, 0, 0.12) 0px 4px 6px, 
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+  width: 75%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 5%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
     rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
@@ -60,34 +58,38 @@ body {
   color: #464A5F;
 }
 
+.loginHeader img {
+  margin-top: 2px;
+}
+
 .signInModal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
 
-    gap: 6vh;
+  gap: 6vh;
 
-    background-color: white;
+  background-color: white;
 
-    width: 75%;
-    height: 100%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    
+  width: 75%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 .signUpModal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
 
-    color: white;
-    background-color: #464A5F;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: white;
+  background-color: #464A5F;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .signUpModal h1 {
@@ -97,62 +99,62 @@ body {
 
 .registerModal {
 
-    margin: auto;
-    height: 60%;
-    width: 30%;
+  margin: auto;
+  height: 60%;
+  width: 30%;
 
-    background-color: #464A5F;
+  background-color: #464A5F;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    gap: 10px;
+  gap: 10px;
 
-    padding: 20px;
-    border-radius: 25px;
-    border: 5px solid black;
+  padding: 20px;
+  border-radius: 25px;
+  border: 5px solid black;
 }
 
 
 .userInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
 
 .loginModel h2 {
-    color: black;
-    text-transform: uppercase;
-    font: bold;
-    border: 3px solid black;
-    border-left: 0;
-    border-top: 0;
-    width: 80px;
+  color: black;
+  text-transform: uppercase;
+  font: bold;
+  border: 3px solid black;
+  border-left: 0;
+  border-top: 0;
+  width: 80px;
 }
 
 .loginModel input {
-    border: 0;
-    background-color: #FDB7B5;
-    display: block;
-    margin: -8px auto;
-    text-align: center;
-    border: 2px solid #F07A77;
-    border-radius: 25px;
-    padding: 14px 10px;
-    width: 200px;
+  border: 0;
+  background-color: #FDB7B5;
+  display: block;
+  margin: -8px auto;
+  text-align: center;
+  border: 2px solid #F07A77;
+  border-radius: 25px;
+  padding: 14px 10px;
+  width: 200px;
 }
 
 .loginModel input:focus {
-    width: 280px;
+  width: 280px;
 }
 
 
 .loginRegister {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn {
@@ -165,6 +167,7 @@ body {
   width: 35%;
   height: 5%;
 }
+
 .btn::before {
   content: '';
   position: absolute;
@@ -173,13 +176,15 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   transition: all 0.3s;
 }
+
 .btn:hover::before {
-  opacity: 0 ;
-  transform: scale(0.5,0.5);
+  opacity: 0;
+  transform: scale(0.5, 0.5);
 }
+
 .btn::after {
   content: '';
   position: absolute;
@@ -190,21 +195,24 @@ body {
   z-index: 1;
   opacity: 0;
   transition: all 0.3s;
-  border: 1px solid rgba(255,255,255,0.5);
-  transform: scale(1.2,1.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.2, 1.2);
 }
+
 .btn:hover::after {
   opacity: 1;
-  transform: scale(1,1);
+  transform: scale(1, 1);
 }
 
 
 .btn-two {
   color: black;
 }
+
 .btn-two::before {
   background-color: rgba(115, 129, 136, 0.24);
 }
+
 .btn-two::after {
   border: 1px solid rgba(163, 42, 42, 0.5);
 }
@@ -218,7 +226,7 @@ body {
 
   color: #333;
   font-size: 1.2rem;
-	margin: 0 auto;
+  margin: 0 auto;
   padding: 1.5rem 2rem;
   border-radius: 0.2rem;
   background-color: rgb(255, 255, 255);
@@ -229,3 +237,327 @@ body {
 }
 
 
+#menubar {
+  white-space: nowrap;
+  padding-bottom: 5px;
+  border-bottom: 2px dotted grey;
+}
+
+#logoBtn {
+  float: left;
+  margin-top: 9px;
+  margin-left: 5px;
+  padding-top: 3px;
+  cursor: pointer;
+
+}
+
+#title {
+
+  display: inline-block
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  font-family: sans-serif;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: rgb(72, 72, 72);
+}
+
+#addContactBtn {
+  border-radius: 1px;
+  display: inline-block;
+  background-color: transparent;
+  border-style: solid;
+  font-size: 1rem;
+  border-color: rgb(152, 186, 219);
+  color: rgb(70, 160, 250);
+  cursor: pointer;
+}
+
+#addContactBtn:hover {
+  background-color: rgb(209, 209, 255)
+}
+
+#deleteUserBtn {
+  border-radius: 1px;
+  display: inline-block;
+  background-color: transparent;
+  border-style: solid;
+  font-size: 1rem;
+  border-color: rgb(243, 90, 161);
+  color: rgb(226, 81, 81);
+  cursor: pointer;
+}
+
+#deleteUserBtn:hover {
+  background-color: rgb(243, 62, 62)
+}
+
+#welcomeMsg {
+  display: inline-block;
+  margin-left: 20rem;
+  margin-right: 10px;
+}
+
+div {
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+table {
+  font-family: sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td,
+th {
+  border: 1px solid #8d8d8d;
+  text-align: left;
+  padding: 6px;
+}
+
+#editHdr {
+  width: 75px;
+  text-align: center;
+}
+
+#removeHdr {
+  width: 75px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.edit {
+  text-align: center;
+}
+
+.remove {
+  text-align: center;
+}
+
+.editBtn {
+  cursor: pointer;
+  display: contents;
+}
+
+.removeBtn {
+  cursor: pointer;
+  display: contents;
+}
+
+/* new contact popup styling */
+#popup {
+  position: absolute;
+
+  /* hide the popup */
+  opacity: 0;
+  top: -200%;
+
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 30em;
+  padding: 10px 30px;
+  background: rgb(227, 225, 225);
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+
+  transition: top 0ms ease-in-out 100ms,
+    opacity 100ms ease-in-out 0ms,
+    transform 30ms ease-in-out 0ms;
+
+}
+
+#popup.active {
+  opacity: 1;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0ms ease-in-out 0ms,
+    opacity 100ms ease-in-out 0ms,
+    transform 30ms ease-in-out 0ms;
+}
+
+#popup .closeBtn {
+  position: absolute;
+  top: 0.2em;
+  right: 1em;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+#popup .form h2 {
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+#popup .formElement {
+  font-size: 1.3em;
+  margin: 15px 0px;
+}
+
+#popup .formElement label {
+  color: #222;
+}
+
+#popup .form .formElement input[type="text"] {
+  margin-top: 10px;
+  display: block;
+  /* make it take up its own line */
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px;
+}
+
+#popup .form .formElement button {
+  /* center button */
+  display: block;
+  margin: auto;
+
+  margin-top: 2em;
+  width: 50%;
+  height: 3em;
+  background: #222;
+  color: rgb(227, 225, 225);
+  border: none;
+  cursor: pointer;
+}
+
+#popup .form #addContactResult {
+  text-align: center;
+  color: rgb(6, 165, 6);
+}
+
+#popupEdit {
+  position: absolute;
+
+  /* hide the popup */
+  opacity: 0;
+  top: -200%;
+
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 30em;
+  padding: 10px 30px;
+  background: rgb(227, 225, 225);
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+
+  transition: top 0ms ease-in-out 100ms,
+    opacity 100ms ease-in-out 0ms,
+    transform 30ms ease-in-out 0ms;
+
+}
+
+#popupEdit.active {
+  opacity: 1;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0ms ease-in-out 0ms,
+    opacity 100ms ease-in-out 0ms,
+    transform 30ms ease-in-out 0ms;
+}
+
+#contactBody {
+  background-color: white;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#popupUser {
+  position: absolute;
+
+  /* hide the popup */
+  opacity: 0;
+  top: -200%;
+
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 30em;
+  padding: 10px 30px;
+  background: rgb(227, 225, 225);
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+
+  transition: top 0ms ease-in-out 100ms,
+    opacity 100ms ease-in-out 0ms,
+    transform 30ms ease-in-out 0ms;
+
+}
+
+#popupUser.active {
+  opacity: 1;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0ms ease-in-out 0ms,
+    opacity 100ms ease-in-out 0ms,
+    transform 30ms ease-in-out 0ms;
+}
+
+#popupUser .closeBtn {
+  position: absolute;
+  top: 0.2em;
+  right: 1em;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+#popupUser .form h2 {
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+#popupUser .formElement {
+  font-size: 1.3em;
+  margin: 15px 0px;
+}
+
+#popupUser .formElement label {
+  color: #222;
+}
+
+#popupUser .form .formElement input[type="text"] {
+  margin-top: 10px;
+  display: block;
+  /* make it take up its own line */
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px;
+}
+
+#popupUser .form .formElement button {
+  /* center button */
+  display: block;
+  margin: auto;
+
+  margin-top: 2em;
+  width: 50%;
+  height: 3em;
+  background: #222;
+  color: rgb(227, 225, 225);
+  border: none;
+  cursor: pointer;
+}
+
+#popupUser .form #deleteUserResult {
+  text-align: center;
+  color: rgb(6, 165, 6);
+}
