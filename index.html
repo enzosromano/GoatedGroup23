@@ -24,7 +24,12 @@
 
 			<div class="form-group">
 				<input type="text" class="form-input" id="loginName" placeholder="Username" />
-				<input type="text" class="form-input" id="loginPassword" placeholder="Password" />
+
+				<div class="passwordToggle">
+					<input type="password" class="form-input" id="loginPassword" placeholder="Password" />
+					<label><input type="checkbox" onclick="showHidePassword()">Show Password</label>
+				</div>
+
 			</div>
 
 			<div class="btn btn-two" onclick="doLogin();">
