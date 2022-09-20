@@ -103,10 +103,11 @@ body {
 .registerModal {
 
   margin: auto;
+  margin-top: 2%;
   height: 60%;
   width: 30%;
 
-  background-color: #464A5F;
+  background-color: white;
 
   display: flex;
   flex-direction: column;
