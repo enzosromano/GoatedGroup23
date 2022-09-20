@@ -216,7 +216,7 @@ function deleteUser() {
   let xhr = new XMLHttpRequest();
 
   //Provide parameters for the http request
-  xhr.open("DELETE", url, true);
+  xhr.open("POST", url, true);
   
   //Set the value of the HTTP request header (must be set right after http open method but befor the http send method)
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -364,8 +364,7 @@ function contactTable() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("contactTableResult").innerHTML =
-                "Contacts have been retrieved";
+                
                 let jsonObject = JSON.parse(xhr.responseText);
                 
                 let table = document.getElementById("contact-table");
@@ -398,7 +397,7 @@ function contactTable() {
 
 function searchContacts() {
 
-    let firstNameContact = document.getElementById("contactName").value;
+    let contactName = document.getElementById("contactName").value;
 
     let tmp = { userID: userId, userFirstName: firstName, userLastName: lastName };
     let jsonPayload = JSON.stringify(tmp);
@@ -409,15 +408,20 @@ function searchContacts() {
     try {
         xhr.onreadystatechange = function () {
             if(this.readyState == 4 && this.status == 200) {
-                document.getElementById("searchContactResult").innerHTML =
-                "Contacts have been retrieved";
+                
                 let jsonObject = JSON.parse(xhr.responseText);
-
                 let table = document.getElementById("contact-table");
+                let num_rows = table.rows.length;
+                for (let i = num_rows - 1; i > 0; i--) {
+                    table.deleteRow(i);
+                }
 
                 jsonObject.results.forEach(function(object) {
-                    
-                    if(object.contactFirstName === firstNameContact){
+                    let chosenContact = object.contactFirstName.concat(' ', object.contactLastName);
+                    console.log(chosenContact);
+
+                    if(chosenContact.toUpperCase().includes(contactName.toUpperCase())){
+                        console.log(chosenContact);
                         
                         let tr = document.createElement("tr");
                         
