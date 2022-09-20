@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body id="contactBody" onload="readCookie();">
+<body id="contactBody" onload="startup();">
 
     <div id="menubar">
 
@@ -34,6 +34,8 @@
         <button id="deleteUserBtn">
             Delete User
         </button>
+
+        <input type="text" placeholder="Search..">
 
         <div id="welcomeMsg">
             Welcome, firstname.
@@ -115,7 +117,7 @@
             </div>
             <div class="formElement">
                 <label for="phone-edit-form"> Phone </label>
-                <input type="text" id="phone-edit-form" placeholder="Edit Contact Phone">
+                <input type="text" id="phone-edit-form" placeholder="Edit Contact Phone Number">
             </div>
             <br>
             <div id="editContactResult">
@@ -145,7 +147,7 @@
         </tr>
 
 
-        <tr>
+        <!--<tr>
             <td>Samu</td>
             <td>Wallace</td>
             <td>samu.wallace@knights.ucf.edu</td>
@@ -164,7 +166,7 @@
                         width="40px"> </button> </td>
             <td class="remove"> <button class="removeBtn"> <img src="images/removeicon.png" alt="delete" height="40px"
                         width="40px"> </button> </td>
-        </tr>
+        </tr>-->
 
 
     </table>

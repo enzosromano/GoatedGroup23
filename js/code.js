@@ -189,6 +189,7 @@ function addContact() {
     
     // refresh table with new contact
     contactTable();
+    location.reload();
 }
 
 function deleteUser() {
@@ -285,6 +286,7 @@ function deleteContact(row) {    // object should be the jsonObject containing t
     
     // refresh table after deletion?
     contactTable();
+    location.reload();
 }
 
 // a little ugly but it works
@@ -292,6 +294,7 @@ function deleteContact(row) {    // object should be the jsonObject containing t
 let editRow = null;
 function setRowGlobal(row) {
     editRow = row;
+    editContact();
 }
 function editContact() {
     
@@ -316,7 +319,7 @@ function editContact() {
                 };
     
     let jsonPayload = JSON.stringify(tmp);
-    let url = urlBase + "/EditContact." + extension;
+    let url = urlBase + "EditContact." + extension;
     
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
@@ -429,3 +432,8 @@ document.addEventListener('DOMContentLoaded', function() {
     deleteUserPopup();
     
 });
+
+function startup(){
+    readCookie();
+    contactTable();
+}
