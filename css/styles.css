@@ -563,6 +563,7 @@ tr:nth-child(even) {
 #popupUser .form #deleteUserResult {
   text-align: center;
   color: rgb(6, 165, 6);
+<<<<<<< HEAD
 }
 
 
@@ -578,3 +579,6 @@ tr:nth-child(even) {
 
 
 
+=======
+}
+>>>>>>> 23089c47be90ea4d6401d263c35f534099991c25
