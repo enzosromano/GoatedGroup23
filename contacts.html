@@ -35,7 +35,9 @@
             Delete User
         </button>
 
-        <input type="text" placeholder="Search..">
+        <input type="text" id= "contactName" placeholder="Search..">
+        <button type="button" id="findContactBtn" class="buttons" onclick="searchContacts();"> Search Contacts </button><br />
+        <span id="searchContactResult"></span>
 
         <div id="welcomeMsg">
             Welcome, firstname.
@@ -127,13 +129,6 @@
                 <button onclick="editContact();"> Submit </button>
             </div>
         </div>
-    </div>
-
-
-
-    <div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti quas commodi in doloremque explicabo fugit ad
-        harum hic quos dicta error incidunt veritatis blanditiis, vero eius maiores repellat quam labore.
     </div>
 
     <table id="contact-table">

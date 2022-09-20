@@ -396,6 +396,56 @@ function contactTable() {
 }
 
 
+function searchContacts() {
+
+    let firstNameContact = document.getElementById("contactName").value;
+
+    let tmp = { userID: userId, userFirstName: firstName, userLastName: lastName };
+    let jsonPayload = JSON.stringify(tmp);
+    let url = urlBase + "/SearchContacts." + extension;
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try {
+        xhr.onreadystatechange = function () {
+            if(this.readyState == 4 && this.status == 200) {
+                document.getElementById("searchContactResult").innerHTML =
+                "Contacts have been retrieved";
+                let jsonObject = JSON.parse(xhr.responseText);
+
+                let table = document.getElementById("contact-table");
+
+                jsonObject.results.forEach(function(object) {
+                    
+                    if(object.contactFirstName === firstNameContact){
+                        
+                        let tr = document.createElement("tr");
+                        
+                        let first = object.contactFirstName;
+                        let last = object.contactLastName;
+                        let email = object.contactEmail;
+                        let phone = object.contactPhoneNumber;
+                        tr.innerHTML =  '<td>' + first + '</td>' +
+                                    '<td>' + last + '</td>' +
+                                    '<td>' + email + '</td>' +
+                                    '<td>' + phone + '</td>' +                              
+                                    '<td class = "edit"> <button class = "editBtn" onclick = "setRowGlobal(this.parentNode.parentNode);"> <img src="images/editicon.png" alt="edit" height="40px" width="40px"> </button> </td>' +
+                                    '<td class = "remove"> <button class = "removeBtn" onclick = "deleteContact(this.parentNode.parentNode);"> <img src="images/removeicon.png" alt="delete" height="40px" width="40px"> </button> </td>' ;
+                    table.appendChild(tr);
+                    }
+
+                });
+            }
+        };
+        xhr.send(jsonPayload);
+
+    } catch (err) {
+        document.getElementById("searchContactResult").innerHTML = err.message;
+    }
+}
+
+
+
 // popup styling
 function contactPopup() {
     document.querySelector("#addContactBtn").addEventListener("click", function() {
