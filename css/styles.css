@@ -6,39 +6,51 @@ body {
   background-color: #464A5F;
 }
 
-#contactBody {
-  background-color: #464A5F;
+.contactBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }
 
 .contactHeader {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 75%;
+}
+
+.contactHeader h1 {
+  font-size: 45px;
+  text-align: center;
+}
+
+.ch-left {
+  display: flex;
+  gap: 15px;
 }
 
 .ch-right {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 15px;
 }
 
 .menubar {
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50%;
+  gap: 20px;
 
   white-space: nowrap;
   padding-bottom: 5px;
   border-bottom: 2px dotted grey;
 }
 
-.menubar h1 {
-  font-size: 38px;
-  margin: 8px;
-}
 
 .header {
   display: flex;
@@ -287,6 +299,7 @@ body {
 
 .form-input-solid {
   border: 1px solid black;
+  height: 0vh;
 }
 
 #logoBtn {
@@ -317,7 +330,7 @@ h2 {
   color: rgb(72, 72, 72);
 }
 
-#addContactBtn {
+/*#addContactBtn {
   border-radius: 1px;
   display: inline-block;
   background-color: transparent;
@@ -326,7 +339,7 @@ h2 {
   border-color: rgb(152, 186, 219);
   color: rgb(70, 160, 250);
   cursor: pointer;
-}
+}*/
 
 #addContactBtn:hover {
   background-color: rgb(209, 209, 255)
