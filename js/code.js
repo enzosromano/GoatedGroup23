@@ -396,7 +396,6 @@ function contactTable() {
 }
 
 
-<<<<<<< HEAD
 function searchContacts() {
 
     let firstNameContact = document.getElementById("contactName").value;
@@ -447,8 +446,6 @@ function searchContacts() {
 
 
 
-=======
->>>>>>> 23089c47be90ea4d6401d263c35f534099991c25
 // popup styling
 function contactPopup() {
     document.querySelector("#addContactBtn").addEventListener("click", function() {
