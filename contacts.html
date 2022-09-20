@@ -14,6 +14,8 @@
 
 <body id="contactBody" onload="startup();">
 
+    
+
     <div id="menubar">
 
         <button id="logoBtn" onclick="contactTable();">
@@ -31,9 +33,13 @@
 
         <!-- end of add contact pop up form -->
 
-        <button id="deleteUserBtn">
+        <!-- <button id="deleteUserBtn">
             Delete User
-        </button>
+        </button> -->
+        <input type="text" id= "username-form" placeholder="Username">
+        <input type="text" id= "password-form" placeholder="Password">
+        <button type="button" id="deleteUserBtn" class="buttons" onclick="deleteUser();"> Delete User </button><br />
+        <span id="deleteUserResult"></span>
 
         <input type="text" id= "contactName" placeholder="Search..">
         <button type="button" id="findContactBtn" class="buttons" onclick="searchContacts();"> Search Contacts </button><br />
@@ -49,7 +55,7 @@
 
     </div>
 
-    <div id="popupUser">
+    <!-- <div id="popupUser">
         <div class="closeBtn"> &times </div>
         <div class="from">
             <h2> Delete User</h2>
@@ -69,7 +75,7 @@
                 <button onclick="deleteUser();"> Submit </button>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div id="popup">
         <div class="closeBtn"> &times </div>
@@ -106,20 +112,36 @@
         <div class="form">
             <h2> Edit Contact </h2>
             <div class="formElement">
-                <label for="first-edit-form"> First Name </label>
+                <label for="first-edit-form"> First Name of Existing Contact </label>
                 <input type="text" id="first-edit-form" placeholder="Edit Contact First Name">
             </div>
             <div class="formElement">
-                <label for="last-edit-form"> Last Name </label>
+                <label for="last-edit-form"> Last Name of Existing Contact </label>
                 <input type="text" id="last-edit-form" placeholder="Edit Contact Last Name">
             </div>
             <div class="formElement">
-                <label for="email-edit-form"> Email </label>
+                <label for="email-edit-form"> Email of Existing Contact </label>
                 <input type="text" id="email-edit-form" placeholder="Edit Contact Email">
             </div>
             <div class="formElement">
-                <label for="phone-edit-form"> Phone </label>
+                <label for="phone-edit-form"> Phone Number of Existing Contact</label>
                 <input type="text" id="phone-edit-form" placeholder="Edit Contact Phone Number">
+            </div>
+            <div class="formElement">
+                <label for="new-first-edit-form">New First Name of Existing Contact </label>
+                <input type="text" id="new-first-edit-form" placeholder="Edit New Contact First Name">
+            </div>
+            <div class="formElement">
+                <label for="new-last-edit-form"> New Last Name of Existing Contact</label>
+                <input type="text" id="new-last-edit-form" placeholder="Edit New Contact Last Name">
+            </div>
+            <div class="formElement">
+                <label for="new-email-edit-form"> New Email of Existing Contact</label>
+                <input type="text" id="new-email-edit-form" placeholder="Edit New Contact Email">
+            </div>
+            <div class="formElement">
+                <label for="new-phone-edit-form"> New Phone Number of Existing Contact</label>
+                <input type="text" id="new-phone-edit-form" placeholder="Edit New Contact Phone Number">
             </div>
             <br>
             <div id="editContactResult">
@@ -170,6 +192,7 @@
 
     <div id="contactTableResult"></div>
     <div id="deleteContactResult"></div>
+
 
 </body>
 

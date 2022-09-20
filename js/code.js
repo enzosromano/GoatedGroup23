@@ -299,11 +299,17 @@ function setRowGlobal(row) {
 function editContact() {
     
     // API will need to know new data and data of contact to be deleted.
-    let newFName = document.getElementById("first-edit-form").value;
-    let newLName = document.getElementById("last-edit-form").value;
-    let newEmail = document.getElementById("email-edit-form").value;
-    let newPhone = document.getElementById("phone-edit-form").value;
+    let contactFirstName = document.getElementById("first-edit-form").value;
+    let contactLastName = document.getElementById("last-edit-form").value;
+    let contactEmail = document.getElementById("email-edit-form").value;
+    let contactPhoneNumber = document.getElementById("phone-edit-form").value;
+    let newContactFirstName = document.getElementById("new-first-edit-form").value;
+    let newContactLastName = document.getElementById("new-last-edit-form").value;
+    let newContactEmail = document.getElementById("new-email-edit-form").value;
+    let newContactPhoneNumber = document.getElementById("jnew-phone-edit-form").value;
     
+    
+    //Samu what are these next 4 lines doing?
     let oldFName = editRow.children[0].textContent;
     let oldLName = editRow.children[1].textContent;
     let oldEmail = editRow.children[2].textContent;
@@ -312,14 +318,14 @@ function editContact() {
     document.getElementById("editContactResult").innerHTML = "";
     
     let tmp =   {   userID: userId, userFirstName: firstName, userLastName: lastName , 
-                    contactFirstName: oldFName, contactLastName: oldLName, 
-                    contactEmail: oldEmail, contactPhoneNumber: oldPhone, 
-                    newContactFirstName: newFName, newContactLastName: newLName, 
-                    newContactEmail: newEmail, newContactPhoneNumber: newPhone
+                    contactFirstName: contactFirstName, contactLastName: contactLastName, 
+                    contactEmail: contactEmail, contactPhoneNumber: contactPhoneNumber, 
+                    newContactFirstName: newContactFirstName, newContactLastName: newContactLastName, 
+                    newContactEmail: newContactEmail, newContactPhoneNumber: newContactPhoneNumber
                 };
     
     let jsonPayload = JSON.stringify(tmp);
-    let url = urlBase + "EditContact." + extension;
+    let url = urlBase + "/EditContact." + extension;
     
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
