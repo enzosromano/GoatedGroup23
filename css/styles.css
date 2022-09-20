@@ -10,6 +10,36 @@ body {
   background-color: #464A5F;
 }
 
+.contactHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.ch-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menubar {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+
+  white-space: nowrap;
+  padding-bottom: 5px;
+  border-bottom: 2px dotted grey;
+}
+
+.menubar h1 {
+  font-size: 38px;
+  margin: 8px;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -184,7 +214,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 35%;
-  height: 5%;
+  height: 2.5vh;
 }
 
 .btn::before {
@@ -255,11 +285,8 @@ body {
   transition: all 0.3s;
 }
 
-
-#menubar {
-  white-space: nowrap;
-  padding-bottom: 5px;
-  border-bottom: 2px dotted grey;
+.form-input-solid {
+  border: 1px solid black;
 }
 
 #logoBtn {
@@ -268,6 +295,9 @@ body {
   margin-left: 5px;
   padding-top: 3px;
   cursor: pointer;
+
+  height: 50px;
+  width: 60px;
 
 }
 
@@ -491,6 +521,11 @@ tr:nth-child(even) {
 }
 
 #contactBody {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   background-color: white;
   margin-left: 1em;
   margin-right: 1em;

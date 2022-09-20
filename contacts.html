@@ -14,16 +14,39 @@
 
 <body id="contactBody" onload="startup();">
 
-    
+    <div class="contactHeader">
+        <div class="ch-left">
+            <button id="logoBtn" onclick="contactTable();">
+                <img src="images/twitchpfp.png" alt="HOME" height="40px" width="40px">
+            </button>
+            <header id="title">
+                <h1>Keep In Touch</h1>
+            </header>
+        </div>
 
-    <div id="menubar">
+        <div class="ch-right">
+            <input type="text" id="contactName" class="form-input form-input-solid" placeholder="Search.." />
+            <div class="btn btn-two" id="findContactBtn" onclick="createUser();">
+                <span>Register</span>
+            </div>
 
-        <button id="logoBtn" onclick="contactTable();">
-            <img src="images/twitchpfp.png" alt="HOME" height="40px" width="40px">
-        </button>
-        <header id="title">
-            <h2>Contact Manager</h2>
-        </header>
+            <!--<button type="button" id="findContactBtn" class="buttons" onclick="searchContacts();"> Search Contacts
+            </button><br />
+            <span id="searchContactResult"></span>-->
+        </div>
+
+    </div>
+
+    <div class="menubar">
+
+        <div>
+            <button id="logoBtn" onclick="contactTable();">
+                <img src="images/twitchpfp.png" alt="HOME" height="40px" width="40px">
+            </button>
+            <header id="title">
+                <h1>Keep In Touch</h1>
+            </header>
+        </div>
 
         <!-- beginning of add contact pop up form -->
         <!-- <button id = "addContactBtn" onclick = "backgroundDim()"> -->
@@ -36,13 +59,11 @@
         <!-- <button id="deleteUserBtn">
             Delete User
         </button> -->
-        <input type="text" id= "username-form" placeholder="Username">
-        <input type="text" id= "password-form" placeholder="Password">
-        <button type="button" id="deleteUserBtn" class="buttons" onclick="deleteUser();"> Delete User </button><br />
         <span id="deleteUserResult"></span>
 
-        <input type="text" id= "contactName" placeholder="Search..">
-        <button type="button" id="findContactBtn" class="buttons" onclick="searchContacts();"> Search Contacts </button><br />
+        <input type="text" id="contactName" placeholder="Search..">
+        <button type="button" id="findContactBtn" class="buttons" onclick="searchContacts();"> Search Contacts
+        </button><br />
         <span id="searchContactResult"></span>
 
         <div id="welcomeMsg">
@@ -55,27 +76,6 @@
 
     </div>
 
-    <!-- <div id="popupUser">
-        <div class="closeBtn"> &times </div>
-        <div class="from">
-            <h2> Delete User</h2>
-            <div class="formElement">
-                <label for="username-form"> Username </label>
-                <input type="text" id="username-form" placeholder="Enter Username">
-            </div>
-            <div class="formElement">
-                <label for="password-form"> Password </label>
-                <input type="text" id="password-form" placeholder="Enter Password">
-            </div>
-            <br>
-            <div id="deleteUserResult">
-
-            </div>
-            <div class="formElement">
-                <button onclick="deleteUser();"> Submit </button>
-            </div>
-        </div>
-    </div> -->
 
     <div id="popup">
         <div class="closeBtn"> &times </div>
