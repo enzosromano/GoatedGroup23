@@ -22,6 +22,9 @@
             <header id="title">
                 <h1>Keep In Touch</h1>
             </header>
+	    <div id="welcomeMsg">
+            	Welcome, firstname.
+            </div>
         </div>
 
         <div class="ch-right">
@@ -89,45 +92,29 @@
         <div class="closeBtn"> &times </div>
         <div class="form">
             <h2> Edit Contact </h2>
-            <div class="formElement">
-                <label for="first-edit-form"> First Name of Existing Contact </label>
-                <input type="text" id="first-edit-form" placeholder="Edit Contact First Name">
-            </div>
-            <div class="formElement">
-                <label for="last-edit-form"> Last Name of Existing Contact </label>
-                <input type="text" id="last-edit-form" placeholder="Edit Contact Last Name">
-            </div>
-            <div class="formElement">
-                <label for="email-edit-form"> Email of Existing Contact </label>
-                <input type="text" id="email-edit-form" placeholder="Edit Contact Email">
-            </div>
-            <div class="formElement">
-                <label for="phone-edit-form"> Phone Number of Existing Contact</label>
-                <input type="text" id="phone-edit-form" placeholder="Edit Contact Phone Number">
-            </div>
-            <div class="formElement">
-                <label for="new-first-edit-form">New First Name of Existing Contact </label>
-                <input type="text" id="new-first-edit-form" placeholder="Edit New Contact First Name">
-            </div>
-            <div class="formElement">
-                <label for="new-last-edit-form"> New Last Name of Existing Contact</label>
-                <input type="text" id="new-last-edit-form" placeholder="Edit New Contact Last Name">
-            </div>
-            <div class="formElement">
-                <label for="new-email-edit-form"> New Email of Existing Contact</label>
-                <input type="text" id="new-email-edit-form" placeholder="Edit New Contact Email">
-            </div>
-            <div class="formElement">
-                <label for="new-phone-edit-form"> New Phone Number of Existing Contact</label>
-                <input type="text" id="new-phone-edit-form" placeholder="Edit New Contact Phone Number">
-            </div>
-            <br>
-            <div id="editContactResult">
+                <div class = "formElement">
+                    <label for = "first-edit-form"> First Name </label>
+                    <input type = "text" id = "first-edit-form" placeholder = "Edit Contact First Name">
+                </div>
+                <div class = "formElement">
+                    <label for = "last-edit-form"> Last Name </label>
+                    <input type = "text" id = "last-edit-form" placeholder = "Edit Contact Last Name">
+                </div>
+                <div class = "formElement">
+                    <label for = "email-edit-form"> Email </label>
+                    <input type = "text" id = "email-edit-form" placeholder = "Edit Contact Email">
+                </div>
+                <div class = "formElement">
+                    <label for = "phone-edit-form"> Phone </label>
+                    <input type = "text" id = "phone-edit-form" placeholder = "Edit Contact Phone">
+                </div>
+                <br>
+                <div id = "editContactResult">
 
-            </div>
-            <div class="formElement">
-                <button onclick="editContact();"> Submit </button>
-            </div>
+                </div>
+                <div class = "formElement">
+                    <button onclick = "editContact();"> Submit </button>
+                </div>
         </div>
     </div>
 
@@ -148,12 +135,13 @@
     <div id="contactTableResult"></div>
     <div id="deleteContactResult"></div>
 
+    <!--
     <div class="contactFooter">
         <div id="welcomeMsg">
             Welcome, firstname.
         </div>
     </div>
-
+    -->
 
 </body>
 

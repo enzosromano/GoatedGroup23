@@ -361,9 +361,13 @@ h2 {
 }
 
 #welcomeMsg {
+  /*
   display: inline-block;
   margin-left: 20rem;
   margin-right: 10px;
+  */ 
+  margin-left: 10px;
+  line-height: 60px;
 }
 
 div {
@@ -533,48 +537,7 @@ tr:nth-child(even) {
     transform 30ms ease-in-out 0ms;
 }
 
-#contactBody {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  background-color: white;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-#popupUser {
-  position: absolute;
-
-  /* hide the popup */
-  opacity: 0;
-  top: -200%;
-
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.25);
-  width: 30em;
-  padding: 10px 30px;
-  background: rgb(227, 225, 225);
-  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-
-  transition: top 0ms ease-in-out 100ms,
-    opacity 100ms ease-in-out 0ms,
-    transform 30ms ease-in-out 0ms;
-
-}
-
-#popupUser.active {
-  opacity: 1;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  transition: top 0ms ease-in-out 0ms,
-    opacity 100ms ease-in-out 0ms,
-    transform 30ms ease-in-out 0ms;
-}
-
-#popupUser .closeBtn {
+#popupEdit .closeBtn {
   position: absolute;
   top: 0.2em;
   right: 1em;
@@ -585,22 +548,22 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 
-#popupUser .form h2 {
+#popupEdit .form h2 {
   text-align: center;
   margin-top: 0.5em;
   margin-bottom: 1em;
 }
 
-#popupUser .formElement {
+#popupEdit .formElement {
   font-size: 1.3em;
   margin: 15px 0px;
 }
 
-#popupUser .formElement label {
+#popupEdit .formElement label {
   color: #222;
 }
 
-#popupUser .form .formElement input[type="text"] {
+#popupEdit .form .formElement input[type="text"] {
   margin-top: 10px;
   display: block;
   /* make it take up its own line */
@@ -610,7 +573,7 @@ tr:nth-child(even) {
   border: 1px;
 }
 
-#popupUser .form .formElement button {
+#popupEdit .form .formElement button {
   /* center button */
   display: block;
   margin: auto;
@@ -624,7 +587,19 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 
-#popupUser .form #deleteUserResult {
+#popupEdit .form #editContactResult {
   text-align: center;
   color: rgb(6, 165, 6);
 }
+
+#contactBody {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: white;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+

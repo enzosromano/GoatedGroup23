@@ -6,6 +6,8 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 
+let editRow = null;
+
 function createUser() {
     userId = 0;
     firstName = "";
@@ -137,6 +139,8 @@ function readCookie() {
         }
     }
 
+    // DONT FORGET TO UNCOMMENT -- FOR TESTING!!! ---------------------------------------------------------------------
+    
     if (userId < 0) {
         window.location.href = "index.html";
     } else {
@@ -192,59 +196,58 @@ function addContact() {
     location.reload();
 }
 
-function deleteUser() {
+// function deleteUser() {
 
-  //Initialize variables for the username and the password for the user to be deleted
-  let deleteUserName = document.getElementById("username-form").value;
-  console.log(deleteUserName);
-  let deleteUserPassword = document. getElementById("password-form").value;
-  console.log(deleteUserPassword);
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("deleteUserResult").innerHTML = "";
-});
+//   //Initialize variables for the username and the password for the user to be deleted
+//   let deleteUserName = document.getElementById("username-form").value;
+//   console.log(deleteUserName);
+//   let deleteUserPassword = document. getElementById("password-form").value;
+//   console.log(deleteUserPassword);
+//   document.addEventListener('DOMContentLoaded', function() {
+//     document.getElementById("deleteUserResult").innerHTML = "";
+// });
 
-  //Create a tmp object that contains the username and the passweord of the user to be deleted
-  let tmp = {Login: deleteUserName, password: deleteUserPassword}
+//   //Create a tmp object that contains the username and the passweord of the user to be deleted
+//   let tmp = {Login: deleteUserName, password: deleteUserPassword}
 
-  //Initialize a variable that contains a JSON o0bject of the login of the user to be deleted
-  let jsonPayLoad = JSON.stringify(tmp);
+//   //Initialize a variable that contains a JSON o0bject of the login of the user to be deleted
+//   let jsonPayLoad = JSON.stringify(tmp);
 
-  //Link the php file that contains the api that deletes the user
-  let url = urlBase + "/DeleteUser." + extension;
+//   //Link the php file that contains the api that deletes the user
+//   let url = urlBase + "/DeleteUser." + extension;
 
-  //Initialize a variable to get a request from the DeleteUser.php
-  let xhr = new XMLHttpRequest();
+//   //Initialize a variable to get a request from the DeleteUser.php
+//   let xhr = new XMLHttpRequest();
 
-  //Provide parameters for the http request
-  xhr.open("POST", url, true);
+//   //Provide parameters for the http request
+//   xhr.open("POST", url, true);
   
-  //Set the value of the HTTP request header (must be set right after http open method but befor the http send method)
-  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+//   //Set the value of the HTTP request header (must be set right after http open method but befor the http send method)
+//   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-  try {
-    xhr.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        let jsonObject = JSON.parse(xhr.responseText);
-        if(jsonObject == "User does not exist!"){
-          document.getElementById("deleteUserResult").innerHTML = 
-         "Incorrect User Credentials";
-         return;
-        }
-        document.getElementById("deleteUserResult").innerHTML = 
-         "User deleted!";
-        console.log(jsonObject);
+//   try {
+//     xhr.onreadystatechange = function () {
+//       if (this.readyState == 4 && this.status == 200) {
+//         let jsonObject = JSON.parse(xhr.responseText);
+//         if(jsonObject == "User does not exist!"){
+//           document.getElementById("deleteUserResult").innerHTML = 
+//          "Incorrect User Credentials";
+//          return;
+//         }
+//         document.getElementById("deleteUserResult").innerHTML = 
+//          "User deleted!";
+//         console.log(jsonObject);
 
-        doLogout();
-      }
-    };
-    xhr.send(jsonPayLoad);
-  } catch (err) {
-    document.getElementById("deleteUserResult").innerHTML = err.message;
-  }
-}
+//         doLogout();
+//       }
+//     };
+//     xhr.send(jsonPayLoad);
+//   } catch (err) {
+//     document.getElementById("deleteUserResult").innerHTML = err.message;
+//   }
+// }
 
-function deleteContact(row) {    // object should be the jsonObject containing that row's contact info
-                                    // also want to delete row in table       
+function deleteContact(row) {          
                                                         
     let fName = row.children[0].textContent;
     let lName = row.children[1].textContent;
@@ -289,40 +292,45 @@ function deleteContact(row) {    // object should be the jsonObject containing t
     location.reload();
 }
 
-// a little ugly but it works
-// gets overwritten everytime edit btn on table is clicked
-let editRow = null;
-function setRowGlobal(row) {
-    editRow = row;
-    editContact();
-}
 function editContact() {
     
     // API will need to know new data and data of contact to be deleted.
-    let contactFirstName = document.getElementById("first-edit-form").value;
-    let contactLastName = document.getElementById("last-edit-form").value;
-    let contactEmail = document.getElementById("email-edit-form").value;
-    let contactPhoneNumber = document.getElementById("phone-edit-form").value;
-    let newContactFirstName = document.getElementById("new-first-edit-form").value;
-    let newContactLastName = document.getElementById("new-last-edit-form").value;
-    let newContactEmail = document.getElementById("new-email-edit-form").value;
-    let newContactPhoneNumber = document.getElementById("jnew-phone-edit-form").value;
-    
-    
-    //Samu what are these next 4 lines doing?
+    let newFName = document.getElementById("first-edit-form").value;
+    console.log(newFName);
+    let newLName = document.getElementById("last-edit-form").value;
+    console.log(newLName);
+    let newEmail = document.getElementById("email-edit-form").value;
+    console.log(newEmail);
+    let newPhone = document.getElementById("phone-edit-form").value;
+    console.log(newPhone.length);
     let oldFName = editRow.children[0].textContent;
+    console.log(oldFName);
     let oldLName = editRow.children[1].textContent;
     let oldEmail = editRow.children[2].textContent;
     let oldPhone = editRow.children[3].textContent;
     
     document.getElementById("editContactResult").innerHTML = "";
-    
+
+    if(newFName.length === 0){
+        newFName = editRow.children[0].textContent;
+    }
+    if(newLName.length === 0){
+        newLName = editRow.children[1].textContent;
+    }
+    if(newEmail.length === 0){
+        newEmail = editRow.children[2].textContent;
+    }
+    if(newPhone.length === 0){
+        newPhone = editRow.children[3].textContent;
+    }
+
     let tmp =   {   userID: userId, userFirstName: firstName, userLastName: lastName , 
-                    contactFirstName: contactFirstName, contactLastName: contactLastName, 
-                    contactEmail: contactEmail, contactPhoneNumber: contactPhoneNumber, 
-                    newContactFirstName: newContactFirstName, newContactLastName: newContactLastName, 
-                    newContactEmail: newContactEmail, newContactPhoneNumber: newContactPhoneNumber
+                    contactFirstName: oldFName, contactLastName: oldLName, 
+                    contactEmail: oldEmail, contactPhoneNumber: oldPhone, 
+                    newContactFirstName: newFName, newContactLastName: newLName, 
+                    newContactEmail: newEmail, newContactPhoneNumber: newPhone
                 };
+    
     
     let jsonPayload = JSON.stringify(tmp);
     let url = urlBase + "/EditContact." + extension;
@@ -346,6 +354,7 @@ function editContact() {
     
     // refresh table after changes
     contactTable();
+    location.reload();
 }
 
 function contactTable() {
@@ -381,12 +390,12 @@ function contactTable() {
                     let last = object.contactLastName;
                     let email = object.contactEmail;
                     let phone = object.contactPhoneNumber;
-			console.log(first + last + email);
+			        // console.log(first + last + email);
                     tr.innerHTML =  '<td>' + first + '</td>' +
                                     '<td>' + last + '</td>' +
                                     '<td>' + email + '</td>' +
                                     '<td>' + phone + '</td>' +                              
-                                    '<td class = "edit"> <button class = "editBtn" onclick = "setRowGlobal(this.parentNode.parentNode);"> <img src="images/editicon.png" alt="edit" height="40px" width="40px"> </button> </td>' +
+                                    '<td class = "edit"> <button class = "editBtn" onclick = "editPopup(this.parentNode.parentNode);"> <img src="images/editicon.png" alt="edit" height="40px" width="40px"> </button> </td>' +
                                     '<td class = "remove"> <button class = "removeBtn" onclick = "deleteContact(this.parentNode.parentNode);"> <img src="images/removeicon.png" alt="delete" height="40px" width="40px"> </button> </td>' ;
                     table.appendChild(tr);
                 });
@@ -439,7 +448,7 @@ function searchContacts() {
                                     '<td>' + last + '</td>' +
                                     '<td>' + email + '</td>' +
                                     '<td>' + phone + '</td>' +                              
-                                    '<td class = "edit"> <button class = "editBtn" onclick = "setRowGlobal(this.parentNode.parentNode);"> <img src="images/editicon.png" alt="edit" height="40px" width="40px"> </button> </td>' +
+                                    '<td class = "edit"> <button class = "editBtn" onclick = "editPopup(this.parentNode.parentNode);"> <img src="images/editicon.png" alt="edit" height="40px" width="40px"> </button> </td>' +
                                     '<td class = "remove"> <button class = "removeBtn" onclick = "deleteContact(this.parentNode.parentNode);"> <img src="images/removeicon.png" alt="delete" height="40px" width="40px"> </button> </td>' ;
                     table.appendChild(tr);
                     }
@@ -466,31 +475,22 @@ function contactPopup() {
     } );
 }
 
-function deleteUserPopup() {
-  document.querySelector("#deleteUserBtn").addEventListener("click", function() {
-      document.querySelector("#popupUser").classList.add("active");
-  } );
-  document.querySelector("#popupUser .closeBtn").addEventListener("click", function() {
-      document.querySelector("#popupUser").classList.remove("active");
-  } );
-}
-
-function editPopup() {
-    document.querySelector(".editBtn").addEventListener("click", function() {
-	    document.querySelector("#popupEdit").classList.add("active");
-    });
+function editPopupClose() {
     document.querySelector("#popupEdit .closeBtn").addEventListener("click", function() {
         document.querySelector("#popupEdit").classList.remove("active");
     });
+}
+
+function editPopup(row) {
+    editRow = row;
+    document.querySelector("#popupEdit").classList.add("active");
 }   
 
 // these functions change html/css elements and so need the DOM to be loaded in order to run
 document.addEventListener('DOMContentLoaded', function() {
     //contactTable();
     contactPopup();
-    editPopup();
-    deleteUserPopup();
-    
+    editPopupClose();
 });
 
 function startup(){
