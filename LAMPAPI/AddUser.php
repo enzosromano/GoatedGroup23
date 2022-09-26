@@ -33,7 +33,17 @@
 			$stmt2->execute();
 			$stmt2->close();
 
-			returnWithSuccess();
+			$stmt3 = $conn->prepare("SELECT * FROM Users WHERE Login=?");
+			$stmt3->bind_param("s", $login);
+			$stmt3->execute();
+
+			$result3 = $stmt3->get_result();
+			$stmt3->close();
+
+			$row3 = $result3->fetch_assoc();
+			$id = $row3["ID"];
+
+			returnWithSuccess($id);
 		}
 		
 		$conn->close();
@@ -53,14 +63,14 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"firstName":"","lastName":"","email":"","phoneNumber":"","login":"","error":"' . $err . '"}';
+		$retValue = '{"id":"0","firstName":"","lastName":"","email":"","phoneNumber":"","login":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithSuccess ()
+	function returnWithSuccess ( $id )
 	{
 		global $firstName, $lastName, $email, $phoneNumber, $login;
-		$retValue ='{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","email":"' . $email . '","phoneNumber":"' . $phoneNumber . '","login":"' . $login . '","error":""}';
+		$retValue ='{"id":"'. $id .'","firstName":"' . $firstName . '","lastName":"' . $lastName . '","email":"' . $email . '","phoneNumber":"' . $phoneNumber . '","login":"' . $login . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
